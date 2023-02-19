@@ -1,15 +1,35 @@
 import React from 'react';
-
+import { Dropdown } from './Dropdown';
 import { FileSelect } from './FileSelect';
+
+import { SETTINGS_PRESETS } from '@ootmm/core';
+
+const preparePresetList = (settingsPresetsImported) => {
+  const selectPresetLabel = {name: "Select a Preset", value: "Select a Preset", settings: {}};
+  const settingsPresetsFormatted = Object.keys(settingsPresetsImported).map(
+    (k) => { return { name: k, value: k, settings: settingsPresetsImported[k] };
+  })
+  const settingsPresets = [selectPresetLabel, ...settingsPresetsFormatted];
+  return settingsPresets;
+}
+const settingsPresets = preparePresetList(SETTINGS_PRESETS || {});
 
 export const RomConfig = ({
   roms,
   setRom,
   seed,
   setSeed,
+  setSetting,
   error,
   onGenerate,
 }) => {
+
+  const loadPreset = (presetName) => {
+    const preset = SETTINGS_PRESETS[presetName] || {};
+    console.log("Loaded preset:", preset);
+    setSetting(preset);
+  };
+
   return (
     <div>
       {error && <div className="generator-error">{error}</div>}
@@ -34,7 +54,13 @@ export const RomConfig = ({
             onChange={(f) => setRom('mm', f)}
           />
         </div>
-        <label>
+        <Dropdown
+          key={"settingspresets"}
+          label={"Settings Preset (if you need settings suggestions!)"}
+          options={settingsPresets}
+          onChange={(v) => loadPreset(v)}
+        />
+        <label className="sm-margin-top">
           Seed (leave blank to auto-generate)
           <input
             type="text"
