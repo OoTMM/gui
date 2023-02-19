@@ -2,7 +2,7 @@ import React from 'react';
 import { Dropdown } from './Dropdown';
 import { FileSelect } from './FileSelect';
 
-import { SETTINGS_PRESETS } from '@ootmm/core';
+import { SETTINGS_PRESETS, TRICKS } from '@ootmm/core';
 
 const preparePresetList = (settingsPresetsImported) => {
   const selectPresetLabel = {name: "Select a Preset", value: "Select a Preset", settings: {}};
@@ -26,7 +26,13 @@ export const RomConfig = ({
 
   const loadPreset = (presetName) => {
     const preset = SETTINGS_PRESETS[presetName] || {};
-    console.log("Loaded preset:", preset);
+    const enabledTricks = preset.enabledTricks || [];
+    delete preset['enabledTricks'];
+    const tricks = Object.keys(TRICKS).reduce((obj, trick) => {
+      console.log(trick)
+      return { ...obj, [trick]: enabledTricks.includes(trick) }
+    }, {});
+    preset.tricks = tricks;
     setSetting(preset);
   };
 
