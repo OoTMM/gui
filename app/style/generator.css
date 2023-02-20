@@ -6,6 +6,14 @@
   background: #ffcccc;
 }
 
+.generator-warning {
+  display: block;
+  margin: 1em;
+  padding: 1em;
+  color: #330000;
+  background: #ffe5b2;
+}
+
 .file-select {
   margin: 2em;
   align-items: center;
