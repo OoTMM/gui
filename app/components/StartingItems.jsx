@@ -21,6 +21,8 @@ export const StartingItems = ({ settings, setSetting, itemPool }) => {
     setSetting({ startingItems: {} });
   };
 
+  console.log(itemPool)
+
   // Valid gamePrefix are "MM" and "OOT"
   const buildSingleTable = (gamePrefix) => {
     return (
@@ -34,7 +36,7 @@ export const StartingItems = ({ settings, setSetting, itemPool }) => {
         </thead>
         <tbody>
           {Object.keys(itemPool)
-            .filter((item) => item.startsWith(gamePrefix))
+            .filter((item) => item.startsWith(gamePrefix) || item.startsWith("SHARED"))
             .map((item) => (
               <tr
                 key={item}
