@@ -23,6 +23,13 @@
   gap: 15px;
 }
 
+.four-column-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  padding-bottom: 0.5rem;
+}
+
 .settings>.checkboxes-lowcount {
   display: flex;
   flex-flow: row wrap;

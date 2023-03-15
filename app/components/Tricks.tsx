@@ -17,8 +17,8 @@ export function Tricks() {
 
   return (
     <form className="settings">
-      <h2>Ocarina of Time</h2>
-      <div className="three-column-grid">
+      <h3>Ocarina of Time</h3>
+      <div className="four-column-grid">
         {ootTricks.map((trick) => (
           <Checkbox
             key={trick}
@@ -28,8 +28,8 @@ export function Tricks() {
           />
         ))}
       </div>
-      <h2 className="section-margin-top">Majora's Mask</h2>
-      <div className="three-column-grid">
+      <h3 className="section-margin-top">Majora's Mask</h3>
+      <div className="four-column-grid">
         {mmTricks.map((trick) => (
           <Checkbox
             key={trick}

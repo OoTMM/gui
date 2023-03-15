@@ -27,6 +27,14 @@ h2 {
   margin-bottom: 24px
 }
 
+h3 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 4px;
+  text-decoration: underline;
+  text-decoration-style: solid;
+}
+
 label {
   font-weight: 500 !important;
 }
@@ -36,5 +44,5 @@ label {
 }
 
 .section-margin-top {
-  margin-top: 24px;
+  margin-top: 1.5rem;
 }
