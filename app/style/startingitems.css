@@ -1,34 +1,44 @@
-.starting-items tr.active {
-  background-color: #d0d0d0;
-  font-weight: bold;
+button.count-adjust {
+  border: 1px solid #aaa;
+  font-weight: normal;
+  height: 24px;             /* smaller and squarer */
+  margin: 0;                /* not sure if there's a proper way to nullify inherited margin */
+  min-width: 28x;           /* the parent button had a bigger min-width, without this the width below would be ignored */
+  padding: 0;               /* not sure if there's a proper way to nullify inherited padding */
+  width: 28px;              /* smaller and squarer */
 }
 
-.starting-items table {
-  display: inline-block;
-  width: 40%;
+.starting-align-button{
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 1.6rem;
 }
 
-.starting-items th {
-  font-weight: bold;
-  text-decoration: underline;
-  font-size: 150%;
-  text-align: left;
-  padding-bottom: 10px;
-  padding-left: 3px;
-}
-
-div.starting-items {
+div.starting-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  white-space: nowrap;
+}
+
+.starting-container table {
+  display: inline-block;
+  font-size: 1.4rem;      /* maybe uglier, could be too small with custom sizes, but you can see more lines */
+  margin-right: 1.6rem;
+  min-width: fit-content;
+}
+
+.starting-container th {
+  font-size: 2.4rem;
+  padding-bottom: 1.2rem;
+  text-align: left;
+}
+
+.starting-container tr.active {
+  background-color: #a0a0a0;
+  font-weight: 600;
+  outline: 1px solid #fff;
 }
 
 td.count {
-  padding: 3px 8px 3px 3px;
-}
-
-button.count-adjust {
-  margin: 0 8px;
-  width: 30px;
-  height: 30px;
+  padding: 2px;
 }

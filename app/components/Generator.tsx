@@ -9,6 +9,7 @@ import { StartingItems } from './StartingItems';
 import { Tricks } from './Tricks';
 import { JunkLocations } from './JunkLocations';
 import { Dungeons } from './Dungeons';
+import { SpecialConds } from './SpecialConds';
 
 export function Generator() {
   const tabs: Tab[] = [];
@@ -24,11 +25,14 @@ export function Generator() {
       tabs.push({ name: category.name, component: <SettingsEditor category={category.key}/>});
     });
     tabs.push({
-      name: "Dungeons",
+      name: "MQ Dungeons",
       component: <Dungeons/>
     }, {
       name: "Tricks",
       component: <Tricks/>
+    }, {
+      name: "Special Conditions",
+      component: <SpecialConds/>
     }, {
       name: "Starting Items",
       component: <StartingItems/>

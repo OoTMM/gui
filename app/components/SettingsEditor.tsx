@@ -16,27 +16,27 @@ export function SettingsEditor({ category }: SettingsProps) {
   const booleanList = settingsData.filter((x) => x.type === 'boolean');
 
   return (
-    <form className="settings">
-      {booleanList.length > 0 && (
-        <div className="checkboxes-lowcount">
-          {booleanList.map((setting) => (
-            <Checkbox
-              key={setting.key}
-              label={setting.name}
-              checked={settings[setting.key] as boolean}
-              onChange={(v) => setSettings({ [setting.key]: v })}
-            />
-          ))}
-        </div>
-      )}
+    <form className="settings-container">
       {enumList.length > 0 && (
-        <div className="three-column-grid">
+        <div className="settings-two-column-grid">
           {enumList.map((setting) => (
             <Dropdown
               value={settings[setting.key] as string}
               key={setting.key}
               label={setting.name}
               options={(setting as any).values}
+              onChange={(v) => setSettings({ [setting.key]: v })}
+            />
+          ))}
+        </div>
+      )}
+      {booleanList.length > 0 && (
+        <div className="settings-checkboxes-list">
+          {booleanList.map((setting) => (
+            <Checkbox
+              key={setting.key}
+              label={setting.name}
+              checked={settings[setting.key] as boolean}
               onChange={(v) => setSettings({ [setting.key]: v })}
             />
           ))}

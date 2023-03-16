@@ -1,32 +1,24 @@
-.generator-error {
-  display: block;
-  margin: 1em;
-  padding: 1em;
-  color: #330000;
-  background: #ffcccc;
-}
-
 .file-select {
-  margin: 2em;
   align-items: center;
+  margin-right: 2.4rem;
+  margin-top: 2.4rem;
 }
 
 .file-select-box {
+  align-items: center;
+  background: #eee;
+  border: 1px solid #7504c9;
+  border-radius: 5%;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  border: 1px solid #aaa;
-  border-radius: 5%;
-  background: #eee;
-  padding: 1em;
-  margin: 1em;
+  margin-top: 0.6rem;
+  padding: 1.6rem;
 }
 
 .file-select-box-img-container {
-  display: flex;
-  width: 8em;
-  height: 8em;
+  height: 140px;
+  width: 140px;
 }
 
 .file-select-box-img-container img {
@@ -34,9 +26,20 @@
 }
 
 .file-select-box p {
-  margin-top: 1em;
+  font-size: 1.4rem;
+  padding-top: 1.6rem;
 }
 
 .file-select-box.empty img {
   filter: grayscale(100%);
+}
+
+.generator-error {
+  background: #ffcccc;
+  border: 2px dotted #f00;
+  color: #330000;
+  display: block;
+  margin: 1.6rem 0 0 0;
+  padding: 1.6rem;
+  width: fit-content;
 }

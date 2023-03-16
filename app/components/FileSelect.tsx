@@ -27,7 +27,7 @@ export const FileSelect = ({ logo, label, accept, file, onChange }: FileSelectPr
           <img src={LOGOS[logo]} width="100%"/>
         </div>
         <input type="file" accept={accept} onChange={e => e.target.files && onChange(e.target.files[0])}/>
-        {!file && <p>No file selected</p>}
+        {!file && <p>-No file selected-</p>}
         {file && <p>{file.name}</p>}
       </div>
     </label>

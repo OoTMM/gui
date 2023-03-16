@@ -55,7 +55,7 @@ export const TransferList = ({ label, locList, settings, setSetting }: TransferL
   };
 
   const buildListElements = (locations: string[]) => (
-    <Scrollbox width="50%" height="400px">
+    <Scrollbox width="" height="500px">                 {/* it was 50% 400px */}
       {filterList(locations).map((loc) => (
         <ListElement
           key={loc}
@@ -115,17 +115,17 @@ export const TransferList = ({ label, locList, settings, setSetting }: TransferL
           disabled={intersection(settingsLocations, selected).length === 0}
         >{"\u25c0"} Remove</button>
       </div>
-      <div className='tl-lists'>
-          {buildListElements(left)}
-          {buildListElements(settingsLocations)}
-      </div>
       <div className='tl-filters'>
+        <button className="filter-clear" onClick={e => setSearchString('')}
+          hidden={searchString === ''}
+          >X</button>
         <input type="text" className='tl-text-input' value={searchString}
           onChange={e => setSearchString(e.target.value)}
         />
-        <button className="filter-clear" onClick={e => setSearchString('')}
-          hidden={searchString === ''}
-        >X</button>
+      </div>
+      <div className='tl-lists'>
+          {buildListElements(left)}
+          {buildListElements(settingsLocations)}
       </div>
     </div>
   );

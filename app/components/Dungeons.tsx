@@ -10,7 +10,7 @@ export function Dungeons() {
   const options = [{
     name: 'Vanilla',
     value: 'vanilla',
-   }, {
+  }, {
     name: 'Master Quest',
     value: 'mq',
   }, {
@@ -19,18 +19,18 @@ export function Dungeons() {
   }];
 
   return (
-    <form className="settings">
-      <div className="three-column-grid">
-        {Object.keys(DUNGEONS).map(d =>
-          <Dropdown
-            key={d}
-            label={(DUNGEONS as any)[d]}
-            options={options}
-            value={(dungeon as any)[d]}
-            onChange={v => setSettings({ dungeon: { ...dungeon, [d as keyof typeof DUNGEONS]: v } })}
-          />
-        )}
-      </div>
-    </form>
+      <form className="dungeons-container">
+        <div className="dungeons-grid">
+          {Object.keys(DUNGEONS).map(d =>
+            <Dropdown
+              key={d}
+              label={(DUNGEONS as any)[d]}
+              options={options}
+              value={(dungeon as any)[d]}
+              onChange={v => setSettings({ dungeon: { ...dungeon, [d as keyof typeof DUNGEONS]: v } })}
+            />
+          )}
+        </div>
+      </form>
   );
 }

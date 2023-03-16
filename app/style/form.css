@@ -1,72 +1,16 @@
-label {
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
-  font-size: 1em;
-}
-
-label > * {
-  font-weight: initial;
-}
-
-input[type=file] {
-  display: none;
-}
-
-input[type=checkbox] {
-  height: 20px;
-  width: 20px;
-  min-width: 20px;
-  margin-right: 6px;
-  opacity: 0.5;
-  transition: all 200ms ease-in 0s;
-}
-
-input[type=text] {
-  line-height: 24px;
-  font-size: 15px;
-  font-weight: 400;
-  transition: all 200ms ease-in 0s;
-  border-radius: 2px;
-  border-width: 1px;
-}
-
-select {
-  transition: border-color 200ms ease-in 0s, box-shadow 200ms ease-in 0s;
-  font-size: 1.5rem;
-  height: 30px;
-  min-height: 30px;
-  border-radius: 2px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(90, 103, 116);
-  background-color: transparent;
-  position: relative;
-}
-
-label > select {
-  margin-top: 8px;
-}
-
-label > input {
-  margin-top: 8px;
-}
-
 button {
-  white-space: nowrap;
-  vertical-align: middle;
-  user-select: none;
-  transition: all 300ms ease-in-out 0s;
-  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  height: 4.2rem;
+  min-width: min-content;
+  padding: 0 1.6rem;
   text-align: center;
-  padding: 0px 16px;
-  min-width: 48px;
-  line-height: 1.6;
-  height: 48px;
-  font-weight: 700;
-  font-size: 1em;
-  border: none;
-  border-radius: 2px;
+  text-decoration: none;
+  transition: all 300ms ease-in-out 0s;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
 button:active, button:hover {
@@ -77,17 +21,68 @@ button, .btn {
   cursor: pointer;
 }
 
-.btn-primary {
-  background: linear-gradient(180deg, #43d857, #00bb19);
+.btn-danger {
+  background: linear-gradient(270deg, #a00, #c00);
+  border: 1px solid #800;
   color: #fff;
 }
 
-.btn-danger {
-  background: #f44336;
+.btn-primary {
+  background: linear-gradient(270deg, #0a0, #0c0);
+  border: 1px solid #080;
   color: #fff;
 }
 
 .checkbox {
   align-items: center;
   flex-direction: row;
+}
+
+input[type=checkbox] {
+  accent-color: #7504c9;
+  bottom: 1px;
+  height: 1.6rem;
+  margin-right: 0.8rem;
+  min-width: 1.6rem;
+  opacity: 0.75;
+  position: relative;
+  transition: all 200ms ease-in 0s;
+  width: 1.6rem;
+}
+
+input[type=file] {
+  display: none;
+}
+
+input[type=text] {
+  border-radius: 2px;
+  border-width: 1px;
+  line-height: 2.4rem;
+  transition: all 200ms ease-in 0s;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+label > input {
+  margin-top: 8px;
+}
+
+label > select {
+  margin-top: 8px;
+}
+
+select {
+  background-color: transparent;
+  border-color: rgb(90, 103, 116);
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 1.5rem;
+  height: 30px;
+  min-height: 30px;
+  position: relative;
+  transition: border-color 200ms ease-in 0s, box-shadow 200ms ease-in 0s;
 }

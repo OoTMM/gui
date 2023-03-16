@@ -32,8 +32,8 @@ export function StartingItems() {
           {items.map((item) => (
             <tr key={item} className={startingItems[item] > 0 ? 'active' : 'inactive'}>
               <td className="count">
-                <button className="count-adjust" onClick={() => decr(item)}>-</button>
-                {startingItems[item] || 0}
+                <button className="count-adjust" onClick={() => decr(item)}>–</button>
+                &nbsp;{startingItems[item] || 0}&nbsp; {/* spaces instead of margins on both sides, cause they double up */}
                 <button className="count-adjust" onClick={() => incr(item)}>+</button>
               </td>
               <td>{itemName(item)}</td>
@@ -46,13 +46,15 @@ export function StartingItems() {
 
   return (
     <>
-      <button className="btn-danger" onClick={reset}>
-        Reset Starting Items
-      </button>
-      <div className="starting-items section-margin-top">
+      <div className="starting-container"> {/* section-margin-top may be needed because of te banner that's missing in my testing  */}
         {buildSingleTable('OOT')}
         {buildSingleTable('MM')}
-        {buildSingleTable('SHARED')}
+        <div className="starting-align-button">
+          <button className="btn-danger" onClick={reset}>
+            Reset Starting Items
+          </button>
+          {buildSingleTable('SHARED')}
+        </div>
       </div>
     </>
   );

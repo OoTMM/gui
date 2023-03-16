@@ -16,28 +16,32 @@ export function Tricks() {
   );
 
   return (
-    <form className="settings">
-      <h2>Ocarina of Time</h2>
-      <div className="three-column-grid">
-        {ootTricks.map((trick) => (
-          <Checkbox
-            key={trick}
-            label={(TRICKS as {[k: string]: string})[trick]}
-            checked={(tricks as {[k: string]: boolean})[trick]}
-            onChange={(v) => setSettings({ tricks: { ...tricks, [trick]: v } })}
-          />
-        ))}
+    <form className="tricks-container">
+      <div className="tricks-game">
+          <h3>Ocarina of Time</h3>
+          <div className="tricks-grid">
+            {ootTricks.map((trick) => (
+              <Checkbox
+              key={trick}
+              label={(TRICKS as {[k: string]: string})[trick]}
+              checked={(tricks as {[k: string]: boolean})[trick]}
+              onChange={(v) => setSettings({ tricks: { ...tricks, [trick]: v } })}
+            />
+          ))}
+        </div>
       </div>
-      <h2 className="section-margin-top">Majora's Mask</h2>
-      <div className="three-column-grid">
-        {mmTricks.map((trick) => (
-          <Checkbox
-            key={trick}
-            label={(TRICKS as {[k: string]: string})[trick]}
-            checked={(tricks as {[k: string]: boolean})[trick]}
-            onChange={(v) => setSettings({ tricks: { ...tricks, [trick]: v } })}
-          />
-        ))}
+      <div className="tricks-game">
+        <h3>Majora's Mask</h3>
+        <div className="tricks-grid">
+          {mmTricks.map((trick) => (
+            <Checkbox
+              key={trick}
+              label={(TRICKS as {[k: string]: string})[trick]}
+              checked={(tricks as {[k: string]: boolean})[trick]}
+              onChange={(v) => setSettings({ tricks: { ...tricks, [trick]: v } })}
+            />
+          ))}
+        </div>
       </div>
     </form>
   );

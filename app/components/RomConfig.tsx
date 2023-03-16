@@ -11,17 +11,19 @@ export function RomConfig() {
 
   return <>
     <h1>OoTMM Web Generator</h1>
-    <h2>Version: {process.env.VERSION}</h2>
+    <h4>&nbsp; -version: {process.env.VERSION}</h4>   {/* is this okay? */}
     {error && <div className="generator-error">{error}</div>}
     <form target="_self" onSubmit={(e) => { e.preventDefault(); generate(); }}>
-      <div className="flex-h">
-        <FileSelect logo="oot" label="Ocarina of Time (1.0, U or J)" accept=".z64, .n64, .v64" file={romConfig.files.oot} onChange={(f) => setFile('oot', f)}/>
-        <FileSelect logo="mm" label="Majora's Mask (U only)" accept=".z64, .n64, .v64" file={romConfig.files.mm} onChange={(f) => setFile('mm', f)} />
+      <div className="flex-roms">
+        <FileSelect logo="oot" label="Ocarina of Time [1.0 U/J]" accept=".z64, .n64, .v64" file={romConfig.files.oot} onChange={(f) => setFile('oot', f)}/>
+        <FileSelect logo="mm" label="Majora's Mask [U only]" accept=".z64, .n64, .v64" file={romConfig.files.mm} onChange={(f) => setFile('mm', f)} />
         {isPatch && <FileSelect logo="ootmm" label="OoTMM Patch File" accept=".ootmm" file={romConfig.files.patch} onChange={(f) => setFile('patch', f)}/>}
       </div>
-      <Checkbox label="Use a patch file" checked={isPatch} onChange={setIsPatch}/>
+      <div className="patch-checkbox-align">
+        <Checkbox label="Use a patch file" checked={isPatch} onChange={setIsPatch}/>
+      </div>
       {!isPatch && <label>
-        Seed (leave blank to auto-generate)
+        Seed: &nbsp;&nbsp;[leave blank to auto-generate] {/* is this double space okay? */}
         <input
           type="text"
           value={romConfig.seed}
